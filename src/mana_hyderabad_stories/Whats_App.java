@@ -91,13 +91,6 @@ public class Whats_App {
 		    sc.wait(pt,10);
 		    sc.click(pt,10);
 		    sc.click(pt,10);
-//		    sc.wait(pt1,10);
-//		    sc.click(pt1,10);
-
-		    
-		    
-		    
-		    //driver.findElement(By.xpath("/html/body/div[1]/div/div/div[1]/div[2]/div[3]/div/div[1]/div[2]/div[3]/div[2]/div/ul/li[4]/div[2]/div[2]/div[2]/div[4]/input")).sendKeys("26");
 		    Thread.sleep(2000);
 		 
 		 
