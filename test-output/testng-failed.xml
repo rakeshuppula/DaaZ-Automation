@@ -3,11 +3,11 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="com.daaz.testscripts.DaaZ_Secure_SELLER">
+      <class name="Only_UI_DEV.B4_Feature_Request">
         <methods>
-          <include name="single_SELLER"/>
+          <include name="Feature_Request1"/>
         </methods>
-      </class> <!-- com.daaz.testscripts.DaaZ_Secure_SELLER -->
+      </class> <!-- Only_UI_DEV.B4_Feature_Request -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

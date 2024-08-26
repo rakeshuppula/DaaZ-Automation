@@ -31,7 +31,7 @@ public class Multiple_buyers {
 		driver.findElement(By.id("login_submit")).click();
 		System.out.println("Login successful");
 		Thread.sleep(2000);
-		driver.findElement(By.id("keyword")).sendKeys("Doctor.com");
+		driver.findElement(By.id("keyword")).sendKeys("Lc.ae");
 		System.out.println("Domain name searched");
 		Thread.sleep(2000);
 		try {
@@ -64,7 +64,7 @@ public class Multiple_buyers {
 		System.out.println("Clicked on domain");
 		// driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/table/tbody/tr/td[4]/a")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.id("offer")).sendKeys("20");
+		driver.findElement(By.id("offer")).sendKeys("100");
 		Thread.sleep(1000);
 		System.out.println("Offer 20");
 		driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div[1]/div/div/div[1]/div[2]/a")).click();

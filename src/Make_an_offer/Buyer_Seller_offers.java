@@ -34,7 +34,7 @@ public class Buyer_Seller_offers {
 		driver.findElement(By.id("login_submit")).click();
 		System.out.println("Login successful");
 		Thread.sleep(2000);
-		driver.findElement(By.id("keyword")).sendKeys("DefectDomain.in");
+		driver.findElement(By.id("keyword")).sendKeys("lc.ae");
 		System.out.println("Domain name searched");
 		Thread.sleep(2000);
 		try {
@@ -67,10 +67,10 @@ public class Buyer_Seller_offers {
 		System.out.println("Clicked on domain");
 		// driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div/div[2]/div/div[5]/div[2]/div[2]/div[1]/table/tbody/tr/td[4]/a")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.id("offer")).sendKeys("20");
+		driver.findElement(By.id("bid_user")).sendKeys("100");
 		Thread.sleep(1000);
 		System.out.println("Offer 20");
-		driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div[1]/div/div/div[1]/div[2]/a")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div[2]/div/button")).click();
 		Thread.sleep(1000);
 		
 		Thread.sleep(7000);

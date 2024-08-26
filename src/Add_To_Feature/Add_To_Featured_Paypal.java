@@ -1,8 +1,12 @@
 package Add_To_Feature;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Add_To_Featured_Paypal {
@@ -10,7 +14,7 @@ public class Add_To_Featured_Paypal {
 	public static void main(String[] args) throws Exception {
 		System.setProperty("webdriver.gecko.driver","./Resources/geckodriver.exe");
 		 WebDriver driver=new FirefoxDriver();		    		
-		driver.navigate().to("https://dev:Devserver@1956!2023@d-v.in/portfolio");
+		driver.navigate().to("https://dev:Devserver@1956!2023@d-v.in/transfer/center");
 		Thread.sleep(3000);
 		driver.findElement(By.id("username")).sendKeys("Rakeshuppula3@gmail.com");
 		driver.findElement(By.id("password")).sendKeys("Rakesh1800##@@");
@@ -24,41 +28,67 @@ public class Add_To_Featured_Paypal {
 		JavascriptExecutor jt = (JavascriptExecutor) driver;
 	    jt.executeScript("window.scrollBy(0,500)", "");
 	    Thread.sleep(4000);
-	 // Carefully select an Auction Domain	    
-	    // 1st    //*[@id="myDomainsList"]/tbody/tr[1]/td[1]/div
-	                       // 2nd    //*[@id="myDomainsList"]/tbody/tr[2]/td[1]/div
-	                       //3rd     //*[@id="myDomainsList"]/tbody/tr[3]/td[1]/div
-      driver.findElement(By.xpath("//*[@id=\"myDomainsList\"]/tbody/tr[6]/td[1]/div")).click();
-      Thread.sleep(2000);
-      System.out.println("Selected domain");
-      driver.findElement(By.id("btn-add-feature-domains")).click();
-      Thread.sleep(2000);
-      System.out.println("Clicked on featured button");
-      driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div[2]/div[2]/div[3]/form/div[5]/button")).click();
-      Thread.sleep(2000);
-      System.out.println("clicked next button");
-      driver.findElement(By.xpath("//a[normalize-space()='proceed to payment']")).click();
-      Thread.sleep(1000);
-      System.out.println("Clicked proceed button");
-      driver.findElement(By.xpath("/html/body/div[1]/div/div/div[1]/div[2]/div[3]/div/div[1]/div[2]/div[3]/div[2]/div/ul/li[3]/div[1]/label/span/b")).click();
-      Thread.sleep(2000);
-      driver.switchTo().frame("__zoid__paypal_buttons__eyJzZW5kZXIiOnsiZG9tYWluIjoiaHR0cHM6Ly9kLXYuaW4ifSwibWV0YURhdGEiOnsid2luZG93UmVmIjp7InR5cGUiOiJwYXJlbnQiLCJkaXN0YW5jZSI6MH19LCJyZWZlcmVuY2UiOnsidHlwZSI6InJhdyIsInZhbCI6IntcInVpZFwiOlwiem9pZC1wYXlwYWwtYnV0dG9ucy11aWRfYzQzMTJmYzRlMF9tdG02bXpxNm1qYVwiLFwiY29udGV4dFwiOlwiaWZyYW1lXCIsXCJ0YWdcIjpcInBheXBhbC1idXR0b25zXCIsXCJjaGlsZERvbWFpbk1hdGNoXCI6e1wiX190eXBlX19cIjpcInJlZ2V4XCIsXCJfX3ZhbF9fXCI6XCJcXFxcLnBheXBhbFxcXFwuKGNvbXxjbikoOlxcXFxkKyk/JFwifSxcInZlcnNpb25cIjpcIjEwXzNfM1wiLFwicHJvcHNcIjp7XCJzdHlsZVwiOntcImxhYmVsXCI6XCJjaGVja291dFwiLFwibGF5b3V0XCI6XCJob3Jpem9udGFsXCIsXCJjb2xvclwiOlwiYmx1ZVwiLFwic2hhcGVcIjpcInJlY3RcIixcInRhZ2xpbmVcIjp0cnVlLFwiaGVpZ2h0XCI6NDAsXCJwZXJpb2RcIjp7XCJfX3R5cGVfX1wiOlwidW5kZWZpbmVkXCJ9LFwibWVudVBsYWNlbWVudFwiOlwiYmVsb3dcIixcImRpc2FibGVNYXhXaWR0aFwiOntcIl9fdHlwZV9fXCI6XCJ1bmRlZmluZWRcIn0sXCJib3JkZXJSYWRpdXNcIjp7XCJfX3R5cGVfX1wiOlwidW5kZWZpbmVkXCJ9fSxcImNyZWF0ZU9yZGVyXCI6e1wiX190eXBlX19cIjpcImNyb3NzX2RvbWFpbl9mdW5jdGlvblwiLFwiX192YWxfX1wiOntcImlkXCI6XCJ1aWRfYzA2MDg0NzdlMV9tdG02bXpxNm1qYVwiLFwibmFtZVwiOlwiY3JlYXRlT3JkZXJcIn19LFwib25BcHByb3ZlXCI6e1wiX190eXBlX19cIjpcImNyb3NzX2RvbWFpbl9mdW5jdGlvblwiLFwiX192YWxfX1wiOntcImlkXCI6XCJ1aWRfMTA3YmViNTE1Nl9tdG02bXpxNm1qYVwiLFwibmFtZVwiOlwib25BcHByb3ZlXCJ9fSxcIm9uQ2FuY2VsXCI6e1wiX190eXBlX19cIjpcImNyb3NzX2RvbWFpbl9mdW5jdGlvblwiLFwiX192YWxfX1wiOntcImlkXCI6XCJ1aWRfNDRkMzIwNzdjZl9tdG02bXpxNm1qYVwiLFwibmFtZVwiOlwib25DYW5jZWxcIn19LFwiY3NwTm9uY2VcIjp7XCJfX3R5cGVfX1wiOlwidW5kZWZpbmVkXCJ9LFwiYWxsb3dCaWxsaW5nUGF5bWVudHNcIjp0cnVlLFwiYW1vdW50XCI6e1wiX190eXBlX19cIjpcInVuZGVmaW5lZFwifSxcImFwaVN0YWdlSG9zdFwiOntcIl9fdHlwZV9fXCI6XCJ1bmRlZmluZWRcIn0sXCJhcHBsZVBheVwiOntcIl9fdHlwZV9fXCI6XCJ1bmRlZmluZWRcIn0sXCJhcHBsZVBheVN1cHBvcnRcIjpmYWxzZSxcImJyYW5kZWRcIjp7XCJfX3R5cGVfX1wiOlwidW5kZWZpbmVkXCJ9LFwiYnV0dG9uTG9jYXRpb25cIjpcImQtdi5pblwiLFwiYnV0dG9uU2Vzc2lvbklEXCI6XCJ1aWRfMmY0ZmM1N2Y3NV9tdG02bXpxNm1qYVwiLFwiYnV0dG9uU2l6ZVwiOlwibWVkaXVtXCIsXCJidXllckNvdW50cnlcIjp7XCJfX3R5cGVfX1wiOlwidW5kZWZpbmVkXCJ9LFwiY2xpZW50QWNjZXNzVG9rZW5cIjp7XCJfX3R5cGVfX1wiOlwidW5kZWZpbmVkXCJ9LFwiY2xpZW50SURcIjpcIkFUb0NlS0VVSlFfSnd3dXdtOWNINEcybzdSWkltcGgtN2NhNWgyRWFQeWo2ckVvODd0bHR4Q0l4VTl0aFhyV3NsUERUdDFNeWJSNjVlLVJRXCIsXCJjbGllbnRNZXRhZGF0YUlEXCI6XCJ1aWRfNjQ5OTNkZjdmOV9tdG02bXpxNm10Y1wiLFwiY29tbWl0XCI6dHJ1ZSxcImNvbXBvbmVudHNcIjpbXCJidXR0b25zXCJdLFwiY3JlYXRlQmlsbGluZ0FncmVlbWVudFwiOntcIl9fdHlwZV9fXCI6XCJ1bmRlZmluZWRcIn0sXCJjcmVhdGVTdWJzY3JpcHRpb25cIjp7XCJfX3R5cGVfX1wiOlwidW5kZWZpbmVkXCJ9LFwiY3JlYXRlVmF1bHRTZXR1cFRva2VuXCI6e1wiX190eXBlX19cIjpcInVuZGVmaW5lZFwifSxcImNzcFwiOntcIm5vbmNlXCI6XCJcIn0sXCJjdXJyZW5jeVwiOlwiVVNEXCIsXCJkZWJ1Z1wiOmZhbHNlLFwiZGlzYWJsZUNhcmRcIjpbXSxcImRpc2FibGVGdW5kaW5nXCI6W10sXCJkaXNhYmxlU2V0Q29va2llXCI6dHJ1ZSxcImRpc3BsYXlPbmx5XCI6W10sXCJlbmFibGVGdW5kaW5nXCI6W10sXCJlbmFibGVUaHJlZURvbWFpblNlY3VyZVwiOmZhbHNlLFwiZW5hYmxlVmF1bHRcIjp7XCJfX3R5cGVfX1wiOlwidW5kZWZpbmVkXCJ9LFwiZW52XCI6XCJzYW5kYm94XCIsXCJleHBlcmltZW50XCI6e1wiZW5hYmxlVmVubW9cIjpmYWxzZX0sXCJleHBlcmltZW50YXRpb25cIjp7fSxcImZsb3dcIjpcInB1cmNoYXNlXCIsXCJmdW5kaW5nRWxpZ2liaWxpdHlcIjp7XCJwYXlwYWxcIjp7XCJlbGlnaWJsZVwiOnRydWUsXCJ2YXVsdGFibGVcIjp0cnVlfSxcInBheWxhdGVyXCI6e1wiZWxpZ2libGVcIjpmYWxzZSxcInZhdWx0YWJsZVwiOmZhbHNlLFwicHJvZHVjdHNcIjp7XCJwYXlJbjNcIjp7XCJlbGlnaWJsZVwiOmZhbHNlLFwidmFyaWFudFwiOm51bGx9LFwicGF5SW40XCI6e1wiZWxpZ2libGVcIjpmYWxzZSxcInZhcmlhbnRcIjpudWxsfSxcInBheWxhdGVyXCI6e1wiZWxpZ2libGVcIjpmYWxzZSxcInZhcmlhbnRcIjpudWxsfX19LFwiY2FyZFwiOntcImVsaWdpYmxlXCI6dHJ1ZSxcImJyYW5kZWRcIjp0cnVlLFwiaW5zdGFsbG1lbnRzXCI6ZmFsc2UsXCJ2ZW5kb3JzXCI6e1widmlzYVwiOntcImVsaWdpYmxlXCI6dHJ1ZSxcInZhdWx0YWJsZVwiOnRydWV9LFwibWFzdGVyY2FyZFwiOntcImVsaWdpYmxlXCI6dHJ1ZSxcInZhdWx0YWJsZVwiOnRydWV9LFwiYW1leFwiOntcImVsaWdpYmxlXCI6dHJ1ZSxcInZhdWx0YWJsZVwiOnRydWV9LFwiZGlzY292ZXJcIjp7XCJlbGlnaWJsZVwiOmZhbHNlLFwidmF1bHRhYmxlXCI6dHJ1ZX0sXCJoaXBlclwiOntcImVsaWdpYmxlXCI6ZmFsc2UsXCJ2YXVsdGFibGVcIjpmYWxzZX0sXCJlbG9cIjp7XCJlbGlnaWJsZVwiOmZhbHNlLFwidmF1bHRhYmxlXCI6dHJ1ZX0sXCJqY2JcIjp7XCJlbGlnaWJsZVwiOmZhbHNlLFwidmF1bHRhYmxlXCI6dHJ1ZX19LFwiZ3Vlc3RFbmFibGVkXCI6ZmFsc2V9LFwidmVubW9cIjp7XCJlbGlnaWJsZVwiOmZhbHNlLFwidmF1bHRhYmxlXCI6ZmFsc2V9LFwiaXRhdVwiOntcImVsaWdpYmxlXCI6ZmFsc2V9LFwiY3JlZGl0XCI6e1wiZWxpZ2libGVcIjpmYWxzZX0sXCJhcHBsZXBheVwiOntcImVsaWdpYmxlXCI6ZmFsc2V9LFwic2VwYVwiOntcImVsaWdpYmxlXCI6ZmFsc2V9LFwiaWRlYWxcIjp7XCJlbGlnaWJsZVwiOmZhbHNlfSxcImJhbmNvbnRhY3RcIjp7XCJlbGlnaWJsZVwiOmZhbHNlfSxcImdpcm9wYXlcIjp7XCJlbGlnaWJsZVwiOmZhbHNlfSxcImVwc1wiOntcImVsaWdpYmxlXCI6ZmFsc2V9LFwic29mb3J0XCI6e1wiZWxpZ2libGVcIjpmYWxzZX0sXCJteWJhbmtcIjp7XCJlbGlnaWJsZVwiOmZhbHNlfSxcInAyNFwiOntcImVsaWdpYmxlXCI6ZmFsc2V9LFwid2VjaGF0cGF5XCI6e1wiZWxpZ2libGVcIjpmYWxzZX0sXCJwYXl1XCI6e1wiZWxpZ2libGVcIjpmYWxzZX0sXCJibGlrXCI6e1wiZWxpZ2libGVcIjpmYWxzZX0sXCJ0cnVzdGx5XCI6e1wiZWxpZ2libGVcIjpmYWxzZX0sXCJveHhvXCI6e1wiZWxpZ2libGVcIjpmYWxzZX0sXCJib2xldG9cIjp7XCJlbGlnaWJsZVwiOmZhbHNlfSxcImJvbGV0b2JhbmNhcmlvXCI6e1wiZWxpZ2libGVcIjpmYWxzZX0sXCJtZXJjYWRvcGFnb1wiOntcImVsaWdpYmxlXCI6ZmFsc2V9LFwibXVsdGliYW5jb1wiOntcImVsaWdpYmxlXCI6ZmFsc2V9LFwic2F0aXNwYXlcIjp7XCJlbGlnaWJsZVwiOmZhbHNlfSxcInBhaWR5XCI6e1wiZWxpZ2libGVcIjpmYWxzZX19LFwiZnVuZGluZ1NvdXJjZVwiOntcIl9fdHlwZV9fXCI6XCJ1bmRlZmluZWRcIn0sXCJnZXRQYWdlVXJsXCI6e1wiX190eXBlX19cIjpcImNyb3NzX2RvbWFpbl9mdW5jdGlvblwiLFwiX192YWxfX1wiOntcImlkXCI6XCJ1aWRfYzUzODZlZmIzYl9tdG02bXpxNm1qYVwiLFwibmFtZVwiOlwiZ2V0UGFnZVVybFwifX0sXCJnZXRQb3B1cEJyaWRnZVwiOntcIl9fdHlwZV9fXCI6XCJjcm9zc19kb21haW5fZnVuY3Rpb25cIixcIl9fdmFsX19cIjp7XCJpZFwiOlwidWlkXzJkMDkxNWI3ZWFfbXRtNm16cTZtamFcIixcIm5hbWVcIjpcImdldFBvcHVwQnJpZGdlXCJ9fSxcImdldFByZXJlbmRlckRldGFpbHNcIjp7XCJfX3R5cGVfX1wiOlwiY3Jvc3NfZG9tYWluX2Z1bmN0aW9uXCIsXCJfX3ZhbF9fXCI6e1wiaWRcIjpcInVpZF8wZDViOGM4NWEwX210bTZtenE2bWphXCIsXCJuYW1lXCI6XCJnZXRQcmVyZW5kZXJEZXRhaWxzXCJ9fSxcImdldFF1ZXJpZWRFbGlnaWJsZUZ1bmRpbmdcIjp7XCJfX3R5cGVfX1wiOlwiY3Jvc3NfZG9tYWluX2Z1bmN0aW9uXCIsXCJfX3ZhbF9fXCI6e1wiaWRcIjpcInVpZF9hYzFkZjdlMmMxX210bTZtenE2bWphXCIsXCJuYW1lXCI6XCJnZXRRdWVyaWVkRWxpZ2libGVGdW5kaW5nXCJ9fSxcImhvc3RlZEJ1dHRvbklkXCI6e1wiX190eXBlX19cIjpcInVuZGVmaW5lZFwifSxcImludGVudFwiOlwiY2FwdHVyZVwiLFwibG9jYWxlXCI6e1wiY291bnRyeVwiOlwiVVNcIixcImxhbmdcIjpcImVuXCJ9LFwibWVyY2hhbnRJRFwiOltdLFwibWVyY2hhbnRSZXF1ZXN0ZWRQb3B1cHNEaXNhYmxlZFwiOmZhbHNlLFwibm9uY2VcIjpcIlwiLFwib25DbGlja1wiOntcIl9fdHlwZV9fXCI6XCJ1bmRlZmluZWRcIn0sXCJvbkNvbXBsZXRlXCI6e1wiX190eXBlX19cIjpcInVuZGVmaW5lZFwifSxcIm9uSW5pdFwiOntcIl9fdHlwZV9fXCI6XCJjcm9zc19kb21haW5fZnVuY3Rpb25cIixcIl9fdmFsX19cIjp7XCJpZFwiOlwidWlkX2M0M2U1NzU2ZDVfbXRtNm16cTZtamFcIixcIm5hbWVcIjpcIm9uSW5pdFwifX0sXCJvblNoaXBwaW5nQWRkcmVzc0NoYW5nZVwiOntcIl9fdHlwZV9fXCI6XCJ1bmRlZmluZWRcIn0sXCJvblNoaXBwaW5nQ2hhbmdlXCI6e1wiX190eXBlX19cIjpcInVuZGVmaW5lZFwifSxcIm9uU2hpcHBpbmdPcHRpb25zQ2hhbmdlXCI6e1wiX190eXBlX19cIjpcInVuZGVmaW5lZFwifSxcInBhZ2VUeXBlXCI6e1wiX190eXBlX19cIjpcInVuZGVmaW5lZFwifSxcInBhcnRuZXJBdHRyaWJ1dGlvbklEXCI6e1wiX190eXBlX19cIjpcInVuZGVmaW5lZFwifSxcInBheW1lbnRNZXRob2ROb25jZVwiOntcIl9fdHlwZV9fXCI6XCJ1bmRlZmluZWRcIn0sXCJwYXltZW50TWV0aG9kVG9rZW5cIjp7XCJfX3R5cGVfX1wiOlwidW5kZWZpbmVkXCJ9LFwicGF5bWVudFJlcXVlc3RcIjp7XCJfX3R5cGVfX1wiOlwidW5kZWZpbmVkXCJ9LFwicGxhdGZvcm1cIjpcImRlc2t0b3BcIixcInJlZmVycmVyRG9tYWluXCI6XCJkLXYuaW5cIixcInJlbWVtYmVyXCI6e1wiX190eXBlX19cIjpcImNyb3NzX2RvbWFpbl9mdW5jdGlvblwiLFwiX192YWxfX1wiOntcImlkXCI6XCJ1aWRfNmZkZjIzOGIyZV9tdG02bXpxNm1qYVwiLFwibmFtZVwiOlwicmVtZW1iZXJcIn19LFwicmVtZW1iZXJlZFwiOltdLFwicmVuZGVyZWRCdXR0b25zXCI6W1wicGF5cGFsXCJdLFwic2Vzc2lvbklEXCI6XCJ1aWRfNjQ5OTNkZjdmOV9tdG02bXpxNm10Y1wiLFwic2RrQ29ycmVsYXRpb25JRFwiOlwiZjg0ODQwODY1YTVhNlwiLFwic2RrSW50ZWdyYXRpb25Tb3VyY2VcIjp7XCJfX3R5cGVfX1wiOlwidW5kZWZpbmVkXCJ9LFwic2Vzc2lvblN0YXRlXCI6e1wiZ2V0XCI6e1wiX190eXBlX19cIjpcImNyb3NzX2RvbWFpbl9mdW5jdGlvblwiLFwiX192YWxfX1wiOntcImlkXCI6XCJ1aWRfZjRkMzQwZDg2OF9tdG02bXpxNm1qYVwiLFwibmFtZVwiOlwiZ2V0XCJ9fSxcInNldFwiOntcIl9fdHlwZV9fXCI6XCJjcm9zc19kb21haW5fZnVuY3Rpb25cIixcIl9fdmFsX19cIjp7XCJpZFwiOlwidWlkX2I2ODQwNDE0YzFfbXRtNm16cTZtamFcIixcIm5hbWVcIjpcInNldFwifX19LFwic3RhZ2VIb3N0XCI6e1wiX190eXBlX19cIjpcInVuZGVmaW5lZFwifSxcInN0b3JhZ2VJRFwiOlwidWlkXzVkMjNiMzgwZWZfbXRtNm16cTZtdGNcIixcInN0b3JhZ2VTdGF0ZVwiOntcImdldFwiOntcIl9fdHlwZV9fXCI6XCJjcm9zc19kb21haW5fZnVuY3Rpb25cIixcIl9fdmFsX19cIjp7XCJpZFwiOlwidWlkX2FjNjI1YTMyZmVfbXRtNm16cTZtamFcIixcIm5hbWVcIjpcImdldFwifX0sXCJzZXRcIjp7XCJfX3R5cGVfX1wiOlwiY3Jvc3NfZG9tYWluX2Z1bmN0aW9uXCIsXCJfX3ZhbF9fXCI6e1wiaWRcIjpcInVpZF9hOGQ4MmRmYzZmX210bTZtenE2bWphXCIsXCJuYW1lXCI6XCJzZXRcIn19fSxcInN1cHBvcnRlZE5hdGl2ZUJyb3dzZXJcIjpmYWxzZSxcInN1cHBvcnRzUG9wdXBzXCI6dHJ1ZSxcInRlc3RcIjp7XCJhY3Rpb25cIjpcImNoZWNrb3V0XCJ9LFwidXNlckV4cGVyaWVuY2VGbG93XCI6e1wiX190eXBlX19cIjpcInVuZGVmaW5lZFwifSxcInVzZXJJRFRva2VuXCI6e1wiX190eXBlX19cIjpcInVuZGVmaW5lZFwifSxcInZhdWx0XCI6ZmFsc2UsXCJ3YWxsZXRcIjp7XCJfX3R5cGVfX1wiOlwidW5kZWZpbmVkXCJ9fSxcImV4cG9ydHNcIjp7XCJpbml0XCI6e1wiX190eXBlX19cIjpcImNyb3NzX2RvbWFpbl9mdW5jdGlvblwiLFwiX192YWxfX1wiOntcImlkXCI6XCJ1aWRfMTAxNzY0NWYwY19tdG02bXpxNm1qYVwiLFwibmFtZVwiOlwiaW5pdFwifX0sXCJjbG9zZVwiOntcIl9fdHlwZV9fXCI6XCJjcm9zc19kb21haW5fZnVuY3Rpb25cIixcIl9fdmFsX19cIjp7XCJpZFwiOlwidWlkX2U4NGQ3NTU2ZDdfbXRtNm16cTZtamFcIixcIm5hbWVcIjpcImNsb3NlOjptZW1vaXplZFwifX0sXCJjaGVja0Nsb3NlXCI6e1wiX190eXBlX19cIjpcImNyb3NzX2RvbWFpbl9mdW5jdGlvblwiLFwiX192YWxfX1wiOntcImlkXCI6XCJ1aWRfOTNmNWQxZWI0Yl9tdG02bXpxNm1qYVwiLFwibmFtZVwiOlwiY2hlY2tDbG9zZVwifX0sXCJyZXNpemVcIjp7XCJfX3R5cGVfX1wiOlwiY3Jvc3NfZG9tYWluX2Z1bmN0aW9uXCIsXCJfX3ZhbF9fXCI6e1wiaWRcIjpcInVpZF8wMWZmY2Q3M2ZiX210bTZtenE2bWphXCIsXCJuYW1lXCI6XCJGblwifX0sXCJvbkVycm9yXCI6e1wiX190eXBlX19cIjpcImNyb3NzX2RvbWFpbl9mdW5jdGlvblwiLFwiX192YWxfX1wiOntcImlkXCI6XCJ1aWRfZTQ1MzFlYzhiZV9tdG02bXpxNm1qYVwiLFwibmFtZVwiOlwiVW5cIn19LFwic2hvd1wiOntcIl9fdHlwZV9fXCI6XCJjcm9zc19kb21haW5fZnVuY3Rpb25cIixcIl9fdmFsX19cIjp7XCJpZFwiOlwidWlkX2QxNjM2NTNhMzdfbXRtNm16cTZtamFcIixcIm5hbWVcIjpcImduXCJ9fSxcImhpZGVcIjp7XCJfX3R5cGVfX1wiOlwiY3Jvc3NfZG9tYWluX2Z1bmN0aW9uXCIsXCJfX3ZhbF9fXCI6e1wiaWRcIjpcInVpZF9jNTM1MzQyNGRhX210bTZtenE2bWphXCIsXCJuYW1lXCI6XCJ2blwifX0sXCJleHBvcnRcIjp7XCJfX3R5cGVfX1wiOlwiY3Jvc3NfZG9tYWluX2Z1bmN0aW9uXCIsXCJfX3ZhbF9fXCI6e1wiaWRcIjpcInVpZF8wMDQ2MThiYmYxX210bTZtenE2bWphXCIsXCJuYW1lXCI6XCJXblwifX19fSJ9fQ__");//jsx-iframe-94ed3aae96
-      Thread.sleep(2000);
-      driver.findElement(By.xpath("//*[@id=\"buttons-container\"]/div/div[1]/div/div[1]/img")).click();
-      Thread.sleep(2000);
-      driver.findElement(By.xpath("//*[@id=\"buttons-container\"]/div/div[1]/div")).click();
-      Thread.sleep(2000);
-      driver.findElement(By.xpath("/html[1]/body[1]/div[1]/section[1]/div[1]/div[2]/form[1]/div[3]/div[1]/div[2]/div[1]/input[1]")).sendKeys("archana1@daaz.com");
-      Thread.sleep(2000);
-      driver.findElement(By.xpath("/html[1]/body[1]/div[1]/section[1]/div[1]/div[2]/form[1]/div[3]/div[2]/button[1]")).click();
-      Thread.sleep(2000);
-      driver.findElement(By.xpath("/html[1]/body[1]/div[1]/section[1]/div[1]/div[2]/form[1]/div[4]/div[1]/div[1]/div[1]/div[1]/input[1]")).sendKeys("Archana@123");
-      Thread.sleep(2000);
-      driver.findElement(By.xpath("/html[1]/body[1]/div[1]/section[1]/div[1]/div[2]/form[1]/div[4]/div[3]/button[1]")).click();
-      Thread.sleep(2000);
-      driver.switchTo().defaultContent();
-      Thread.sleep(6000);
-      driver.quit();
-	}
+	    
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div[2]/div[3]/div/div/div[3]/table/tbody/tr[1]/td[7]/div/div/a/i")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div[2]/div[3]/div/div/div[3]/table/tbody/tr[1]/td[7]/div/div/div/ul/li[3]/a")).click();
+        Thread.sleep(2000);
+        ArrayList<String> hk=new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(hk.get(1));
+        Thread.sleep(2000);
+        WebElement ev= driver.findElement(By.xpath("/html/body/main/table/tbody/tr[2]/td[4]"));
+        WebElement ev2= driver.findElement(By.xpath("/html/body/main/table/tbody/tr[3]/td[4]"));
+     
+        Scanner sc = new Scanner(System.in);
+       // System.out.print("Enter the first number: "+ev.getText());
+       
+        
+        System.out.print("\r\nEnter the second number: "+ev2.getText() +ev.getText());
+        int firstNumber = sc.nextInt();
+        int secondNumber = sc.nextInt();
+        
+        System.out.print("Enter the type of operation you want to perform (+, -, *, /, %): ");
+        String operation = sc.next();
+        int result = performOperation(firstNumber, secondNumber, operation);
+        System.out.println("Your answer is: " + result);
+    }
+	 public static int performOperation(int firstNumber, int secondNumber, String operation)
+	    {
+	        int result = 0;
+	        if (operation.equals("+")) {
+	            result = firstNumber + secondNumber;
+	        }
+	        
+	        return result;
+        
+	    }}
+        
+//        Thread.sleep(2000);
+//        WebElement ev3= driver.findElement(By.xpath("/html/body/main/table/tbody/tr[4]/td[4]"));
+//        System.out.println("VAT="+ev3.getText());
+//        Thread.sleep(2000);
+      
+      
+//        int num = 100, sum = 0;
+//
+//        for(int i = 1; i <= num; ++i)
+//        {
+//            // sum = sum + i;
+//            sum += i;
+//        }
+//
+//        System.out.println("Sum = " + sum);
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+	
 
-}
+

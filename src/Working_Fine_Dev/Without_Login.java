@@ -67,24 +67,7 @@ public class Without_Login {
 	     
 	     
 	     
-	     
-//	     driver.findElement(By.xpath("/html/body/nav/div[1]/div[1]/a/span/img")).click();
-//	     Thread.sleep(3000);
-//         driver.findElement(By.xpath("/html/body/div[1]/div[1]/section[1]/div[3]/div[3]/div/div/ul/li[2]/div/div[2]/span/a")).click();
-//         Thread.sleep(1000);
-//         driver.findElement(By.id("bid_user")).sendKeys("200");
-//         Thread.sleep(1000);
-//         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div[2]/div/button")).click();
-//         Thread.sleep(1000);
-//         driver.get("https://dev:Devserver@1956!2023@d-v.in/leads");
-//         Thread.sleep(1000);
-//         driver.findElement(By.id("counterOffer2467")).sendKeys("300");
-//         Thread.sleep(1000);
-//         driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div[2]/div[3]/div[2]/section/div/div[2]/div[2]/div/div/div/div/div[2]/div/div[1]/div[2]/div[1]/input")).click();
-//        
-//         Thread.sleep(1000);
-//         driver.findElement(By.xpath("//*[@id=\"collapse1\"]/div/div[2]/div/div[1]/div[5]/button")).click();
-//        // driver.quit();
+
 	}
 
 }

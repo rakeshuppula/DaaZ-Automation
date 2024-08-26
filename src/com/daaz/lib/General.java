@@ -1676,8 +1676,8 @@ public class General extends Global {
 	public void Feature_Request1() throws Exception {
 		System.setProperty("webdriver.gecko.driver", "./Resources/geckodriver.exe");
 		driver = new FirefoxDriver();
-		//driver.navigate().to(url1);
-		driver.navigate().to(url11);  //UAT
+		driver.navigate().to(url1);
+		//driver.navigate().to(url11);  //UAT
 		// driver.findElement(By.xpath(url_daazsecure_xpath)).click();
 		driver.findElement(By.xpath(txt_loginname_xpath)).sendKeys(un);
 		driver.findElement(By.id(txt_password_name)).sendKeys(pw);
@@ -1750,8 +1750,8 @@ public class General extends Global {
 	public void Feature_Request_Reject() throws Exception {
 		System.setProperty("webdriver.gecko.driver", "./Resources/geckodriver.exe");
 		driver = new FirefoxDriver();
-		//driver.navigate().to(url1);
-		driver.navigate().to(url11);
+		driver.navigate().to(url1);
+		//driver.navigate().to(url11);
 		// driver.findElement(By.xpath(url_daazsecure_xpath)).click();
 		driver.findElement(By.xpath(txt_loginname_xpath)).sendKeys(un);
 		driver.findElement(By.id(txt_password_name)).sendKeys(pw);

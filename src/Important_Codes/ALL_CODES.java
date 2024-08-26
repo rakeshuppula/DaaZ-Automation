@@ -2,11 +2,14 @@ package Important_Codes;
 
 import java.util.Set;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.sikuli.script.Pattern;
 import org.sikuli.script.Screen;
 
@@ -14,6 +17,18 @@ public class ALL_CODES {
 	public static void main(String[] args) throws Exception {
 		System.setProperty("webdriver.gecko.driver", "./Resources/geckodriver.exe");
 		WebDriver driver = new FirefoxDriver();
+		System.setProperty("webdriver.edge.driver", "./EdgeDriver/msedgedriver.exe");
+		WebDriver drivers = new EdgeDriver();
+//__________________________________________________________________________________________________________________________________
+//________________________________________________Calendar__________________________________________________________________________________		
+	// Current Date pick	
+		int day=24;		
+        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div/div[2]/div/div/div/div/div/div[2]/table/thead/tr[2]/td[9]/div/span/button")).click();
+        driver.findElement(By.xpath("//table[@class=' table-condensed']//td[text()="+day+"]")).click();
+	
+		
+		
+		
 //__________________________________________________________________________________________________________________________________
 //__________________________________________________________________________________________________________________________________
 	 JavascriptExecutor jsee= (JavascriptExecutor)driver;
@@ -21,7 +36,7 @@ public class ALL_CODES {
 	// jsee.executeScript("document.getElementById('username').style.border='2px blue solid';");
 	 Thread.sleep(2000);
 	 jsee.executeScript("document.getElementById('username').setAttribute('style','border:10px red solid;background:yellow;color:green');");
-//Types**
+   //Types**
 	 //ID
 	 jsee.executeScript("document.getElementById('created_by'),value='id';");
 	 //SendKeys
@@ -72,6 +87,9 @@ public class ALL_CODES {
 //	 WebElement Rakesh2= driver.findElement(By.id("auction_option"));
 //	 Select RakeshTesting3=new Select(Rakesh2);
 //	 RakeshTesting3.selectByIndex(1);
+	//OR
+	Select Rk=new Select(driver.findElement(By.id("Rakesh")));
+	Rk.selectByVisibleText("Auction");
 
 //__________________________________________________________________________________________________________________________________
 //______________________________________ENTER KEY____________________________________________________________________________________	
@@ -81,6 +99,11 @@ public class ALL_CODES {
 //    r.keyRelease(KeyEvent.VK_ENTER);
 
 //                	  OR
+	 Alert a= driver.switchTo ().alert ();
+	 System.out.println (a.getText ());
+	 a.accept ();
+	 
+//	 OR
 
 //	 Robot r2 = new Robot();
 //	    r2.keyPress(KeyEvent.VK_CONTROL);    
@@ -139,7 +162,7 @@ public class ALL_CODES {
  //__________________________________________________________________________________________________________________________________
  //__________________________________________________________________________________________________________________________________
 
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     ALERT    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     accept or dismiss  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //	 Alert a= driver.switchTo ().alert ();
 //	 System.out.println (a.getText ());
 //	 a.accept ();
@@ -213,7 +236,7 @@ public class ALL_CODES {
 //    }
 //    driver.switchTo().window(parentWindowHandle);    
 //    Thread.sleep(1000); 
- //__________________________________________________________________________________________________________________________________
+//__________________________________________________________________________________________________________________________________
  //______________________________________Sikuli______________________________________________________________________________________
   
 	try {
