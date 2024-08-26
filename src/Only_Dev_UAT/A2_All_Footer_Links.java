@@ -1,4 +1,4 @@
-package Regression_Testing_UAT;
+package Only_Dev_UAT;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;

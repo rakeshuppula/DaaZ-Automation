@@ -1,4 +1,4 @@
-package Regression_Testing_UAT;
+package Only_Dev_UAT;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
